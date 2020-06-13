@@ -122,23 +122,32 @@
     
     > Because you want to make sure that your dev and test data come from the same distribution for your algorithm to make your team’s iterative development process is efficient.
     
+    - [ ] You should correct incorrectly labeled data in the training set as well so as to avoid your training set now being even more different from your dev set.
 
     - [x] You should not correct incorrectly labeled data in the training set as well so as to avoid your training set now being even more different from your dev set.
     
     >  Deep learning algorithms are quite robust to having slightly different train and dev distributions. 
-
+    
+    - [ ] You do not necessarily need to fix the incorrectly labeled data in the training set, because it's okay for the training set distribution to differ from the dev and test sets. Note that it is important that the dev set and test set have the same distribution.
 
 12. So far your algorithm only recognizes red and green traffic lights. One of your colleagues in the startup is starting to work on recognizing a yellow traffic light. (Some countries call it an orange light rather than a yellow light; we’ll use the US convention of calling it yellow.) Images containing yellow lights are quite rare, and she doesn’t have enough data to build a good model. She hopes you can help her out using transfer learning.
 
     What do you tell your colleague?
     
-    - She should try using weights pre-trained on your dataset, and fine-tuning further with the yellow-light dataset.
+    - [x] She should try using weights pre-trained on your dataset, and fine-tuning further with the yellow-light dataset.
     
     > You have trained your model on a huge dataset, and she has a small dataset. Although your labels are different, the parameters of your model have been trained to recognize many characteristics of road and traffic images which will be useful for her problem. This is a perfect case for transfer learning, she can start with a model with the same architecture as yours, change what is after the last hidden layer and initialize it with your trained parameters.
+    
+    - [ ] If she has (say) 10,000 images of yellow lights, randomly sample 10,000 images from your dataset and put your and her data together. This prevents your dataset from “swamping” the yellow lights dataset.
+    - [ ] You cannot help her because the distribution of data you have is different from hers, and is also lacking the yellow label.
+    - [ ] Recommend that she try multi-task learning instead of transfer learning using all the data.
 
 13. Another colleague wants to use microphones placed outside the car to better hear if there’re other vehicles around you. For example, if there is a police vehicle behind you, you would be able to hear their siren. However, they don’t have much to train this audio system. How can you help?
-
-    - Neither transfer learning nor multi-task learning seems promising.
+    
+    - [ ] Transfer learning from your vision dataset could help your colleague get going faster. Multi-task learning seems significantly less promising.
+    - [ ] Multi-task learning from your vision dataset could help your colleague get going faster. Transfer learning seems significantly less promising.
+    - [ ] Either transfer learning or multi-task learning could help our colleague get going faster.
+    - [x] Neither transfer learning nor multi-task learning seems promising.
     
     > The problem he is trying to solve is quite different from yours. The different dataset structures make it probably impossible to use transfer learning or multi-task learning.
     
@@ -149,6 +158,7 @@
     A teammate proposes a different, two-step approach:
     
     - (B) In this two-step approach, you would first (i) detect the traffic light in the image (if any), then (ii) determine the color of the illuminated lamp in the traffic light.
+    
     Between these two, Approach B is more of an end-to-end approach because it has distinct steps for the input end and the output end. True/False?
 
 
