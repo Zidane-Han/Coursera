@@ -69,7 +69,7 @@
   - Confirm that the call is confidential
   - Check in about length and safety of call
   - Addition: during the call, pause and assess the need for medical care if the person has trouble breathing, chest pain that doesn't go away, confusion or trouble talking.
-- **Inquire: **figure out the case's likely infectious period
+- **Inquire:** figure out the case's likely infectious period
   - Ask questions to determine the infectious period
   - Use answer to calculate the period of time that the case may have spread SARS-CoV-2 to others; to figure out who was close to the case during that period of time.
 - **Identify contacts:** ask the case about contacts during their infectious period (repeat)
